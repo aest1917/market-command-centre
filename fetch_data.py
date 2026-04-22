@@ -219,8 +219,17 @@ data = dict(
     thematic=thematic, breadth=breadth, breadth_etfs=breadth_etfs
 )
 
+class SafeEncoder(json.JSONEncoder):
+    def default(self, obj):
+        import numpy as np
+        if isinstance(obj, (np.bool_)): return bool(obj)
+        if isinstance(obj, (np.integer)): return int(obj)
+        if isinstance(obj, (np.floating)): return float(obj)
+        if isinstance(obj, (np.ndarray,)): return obj.tolist()
+        return super().default(obj)
+
 with open("data.json","w") as f:
-    json.dump(data, f, indent=2)
+    json.dump(data, f, indent=2, cls=SafeEncoder)
 
 print(f"Done — {refresh_pht}", file=sys.stderr)
 print("OK")
