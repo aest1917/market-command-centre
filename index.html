@@ -463,7 +463,7 @@ fetch('data.json?'+Date.now()).then(function(r){return r.json();}).then(function
   renderMacro('tb-metals',d.metals||[]);
   renderMacro('tb-energy',d.energy||[]);
   renderMacro('tb-yields',d.yields||[]);
-  renderMacro('tb-global',d.global||[]);
+  renderMacro('tb-global',d.global_idx||[]);
   if(d.major_etf)renderFull('tb-major-etf',d.major_etf,false,10);
   if(d.submarket)renderFull('tb-submarket',d.submarket,true,11);
   if(d.sp_sectors)renderRanked('tb-sectors',d.sp_sectors,9);
