@@ -213,7 +213,7 @@ data = dict(
     refresh_utc=refresh_utc, refresh_pht=refresh_pht,
     pulse=pulse_data, futures=futures_data, vix_dxy=vix_data,
     crypto=crypto_data, metals=metals_data, energy=energy_data,
-    yields=yields_data, global=global_data,
+    yields=yields_data, global_idx=global_data,
     major_etf=major_etf, submarket=submarket,
     sp_sectors=sp_sectors, ew_sectors=ew_sectors,
     thematic=thematic, breadth=breadth, breadth_etfs=breadth_etfs
