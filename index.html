@@ -84,9 +84,11 @@ tr:hover>td{background:var(--bg2)}
 .h-inner{padding:8px 14px 10px;background:var(--bg3)}
 .h-title{font-size:9px;color:var(--text-lo);letter-spacing:.1em;margin-bottom:6px}
 .h-chips{display:flex;flex-wrap:wrap;gap:5px}
-.h-chip{background:var(--bg2);border:1px solid var(--border2);border-radius:3px;padding:3px 8px;font-size:10px;white-space:nowrap}
+.h-chip{background:var(--bg2);border:1px solid var(--border2);border-radius:3px;padding:3px 8px;font-size:10px;white-space:nowrap;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center}
+.h-chip:hover{border-color:var(--accent);background:var(--bg)}
+.h-chip:hover .h-tk{color:var(--accent)}
 .h-wt{color:var(--accent);font-weight:500;margin-right:4px}
-.h-tk{color:var(--text-hi);font-weight:500;margin-right:3px}
+.h-tk{color:var(--text-hi);font-weight:500;margin-right:3px;transition:color .15s}
 .h-nm{color:var(--text-mid);font-size:9px}
 .top10-btn{font-size:9px;color:var(--accent);cursor:pointer;padding:2px 7px;border:1px solid var(--border2);border-radius:2px;white-space:nowrap;background:transparent;letter-spacing:.04em;transition:all .15s}
 .top10-btn:hover,.top10-btn.open{background:var(--accent);color:#000;border-color:var(--accent)}
@@ -122,6 +124,21 @@ tr:hover>td{background:var(--bg2)}
 
 .pos{color:#3fb950}.neg{color:#f85149}.neu{color:var(--text-lo)}.flat{color:var(--text-mid)}
 .footer{padding:10px 20px;font-size:10px;color:var(--text-lo);display:flex;gap:16px;flex-wrap:wrap}
+
+/* TRADINGVIEW MODAL */
+#tv-modal{display:none;position:fixed;inset:0;z-index:9990;background:rgba(0,0,0,0.82);align-items:center;justify-content:center}
+#tv-modal.open{display:flex}
+#tv-modal-box{width:min(1050px,95vw);height:min(660px,90vh);background:var(--bg);border:1px solid var(--border2);border-radius:4px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+#tv-modal-hdr{display:flex;align-items:center;padding:8px 14px;background:var(--bg2);border-bottom:1px solid var(--border);gap:10px}
+#tv-modal-title{font-size:12px;color:var(--accent);letter-spacing:1px;font-weight:500;text-transform:uppercase;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#tv-modal-hdr button{background:none;border:1px solid var(--border2);color:var(--text-lo);font-family:var(--font);font-size:10px;letter-spacing:1px;padding:4px 9px;border-radius:3px;cursor:pointer;text-transform:uppercase;transition:all .15s}
+#tv-modal-hdr button:hover{border-color:var(--accent);color:var(--accent)}
+#tv-frame-wrap{flex:1;overflow:hidden;background:#131722}
+#tv-frame{width:100%;height:100%;border:none}
+
+/* CLICKABLE TICKER */
+.tk-link{cursor:pointer;border-bottom:1px dotted rgba(120,150,180,0.45);transition:color .15s,border-color .15s}
+.tk-link:hover{color:var(--accent)!important;border-bottom-color:var(--accent)}
 </style>
 </head>
 <body>
@@ -283,6 +300,19 @@ tr:hover>td{background:var(--bg2)}
   <span id="footer-ts"></span>
 </div>
 
+<!-- TRADINGVIEW CHART MODAL -->
+<div id="tv-modal" onclick="if(event.target===this)closeChart()">
+  <div id="tv-modal-box">
+    <div id="tv-modal-hdr">
+      <div id="tv-modal-title">—</div>
+      <button onclick="closeChart()">✕ &nbsp;CLOSE</button>
+    </div>
+    <div id="tv-frame-wrap">
+      <iframe id="tv-frame" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
 <script>
 // ── THEME ────────────────────────────────────────────────────────────────────
 function setTheme(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('cc-theme',t);}
@@ -339,8 +369,8 @@ const H={
 function mkHRow(code,ncols){
   const h=H[code];
   if(!h)return'<tr class="h-row" data-for="'+code+'"><td colspan="'+ncols+'"><div class="h-inner"><div class="h-title">TOP 10 HOLDINGS — '+code+'</div><div style="color:var(--text-lo);font-size:10px">Holdings data not available</div></div></td></tr>';
-  const chips=h.map(function(x){return'<div class="h-chip"><span class="h-wt">'+x.w+'</span><span class="h-tk">'+x.t+'</span><span class="h-nm">'+x.n+'</span></div>';}).join('');
-  return'<tr class="h-row" data-for="'+code+'"><td colspan="'+ncols+'"><div class="h-inner"><div class="h-title">TOP 10 HOLDINGS BY WEIGHT — '+code+'</div><div class="h-chips">'+chips+'</div></div></td></tr>';
+  const chips=h.map(function(x){return'<div class="h-chip tk-link" data-sym="'+x.t+'" data-nm="'+x.n+'" title="Click to view '+x.n+' ('+x.t+') chart"><span class="h-wt">'+x.w+'</span><span class="h-tk">'+x.t+'</span><span class="h-nm">'+x.n+'</span></div>';}).join('');
+  return'<tr class="h-row" data-for="'+code+'"><td colspan="'+ncols+'"><div class="h-inner"><div class="h-title">TOP 10 HOLDINGS BY WEIGHT — '+code+' &nbsp;·&nbsp; <span style="color:var(--accent);font-weight:normal;font-size:8.5px">CLICK ANY HOLDING TO VIEW CHART</span></div><div class="h-chips">'+chips+'</div></div></td></tr>';
 }
 function toggleH(btn,code){
   var row=document.querySelector('.h-row[data-for="'+code+'"]');if(!row)return;
@@ -352,19 +382,22 @@ function toggleH(btn,code){
 // ── RENDER ───────────────────────────────────────────────────────────────────
 function renderMacro(id,data){
   document.getElementById(id).innerHTML=data.map(function(r){
-    return'<tr><td>'+r.code+'</td><td>'+r.label+'</td><td>'+r.price+'</td>'+td(r.d1)+td(r.w1)+td(r.m1||'—')+td(r.w52||'—')+td(r.ytd)+'</tr>';
+    var sym=r.ticker||r.code,lbl=r.label||sym;
+    return'<tr><td><span class="tk-link" data-sym="'+sym+'" data-nm="'+lbl+'">'+r.code+'</span></td><td>'+r.label+'</td><td>'+r.price+'</td>'+td(r.d1)+td(r.w1)+td(r.m1||'—')+td(r.w52||'—')+td(r.ytd)+'</tr>';
   }).join('');
 }
 function renderFull(tbodyId,data,ranked,ncols){
   document.getElementById(tbodyId).innerHTML=data.map(function(r,i){
     var rk=ranked?'<td class="neu">'+(i+1)+'</td>':'';
-    var main='<tr data-code="'+r.code+'" data-d1="'+(r.d1_val||0)+'" data-w1="'+(r.w1_val||0)+'" data-m1="'+(r.m1_val||0)+'" data-w52="'+(r.w52_val||0)+'" data-ytd="'+(r.ytd_val||0)+'">'+rk+'<td>'+r.code+'</td><td>'+r.label+'</td><td>'+r.price+'</td>'+td(r.d1)+td(r.w1)+td(r.m1||'—')+td(r.w52||'—')+td(r.ytd)+mkSpark(r.trend)+'<td><span class="top10-btn" onclick="toggleH(this,\''+r.code+'\')">&#9658; TOP 10</span></td></tr>';
+    var sym=r.ticker||r.code,lbl=r.label||sym;
+    var main='<tr data-code="'+r.code+'" data-d1="'+(r.d1_val||0)+'" data-w1="'+(r.w1_val||0)+'" data-m1="'+(r.m1_val||0)+'" data-w52="'+(r.w52_val||0)+'" data-ytd="'+(r.ytd_val||0)+'">'+rk+'<td><span class="tk-link" data-sym="'+sym+'" data-nm="'+lbl+'">'+r.code+'</span></td><td>'+r.label+'</td><td>'+r.price+'</td>'+td(r.d1)+td(r.w1)+td(r.m1||'—')+td(r.w52||'—')+td(r.ytd)+mkSpark(r.trend)+'<td><span class="top10-btn" onclick="toggleH(this,\''+r.code+'\')">&#9658; TOP 10</span></td></tr>';
     return main+mkHRow(r.code,ncols);
   }).join('');
 }
 function renderRanked(tbodyId,data,ncols){
   document.getElementById(tbodyId).innerHTML=data.map(function(r,i){
-    var main='<tr data-code="'+r.code+'" data-d1="'+(r.d1_val||0)+'" data-w1="'+(r.w1_val||0)+'" data-m1="'+(r.m1_val||0)+'" data-w52="'+(r.w52_val||0)+'" data-ytd="'+(r.ytd_val||0)+'"><td class="neu">'+(i+1)+'</td><td>'+r.label+'</td><td>'+r.code+'</td>'+td(r.d1)+td(r.w1)+td(r.m1||'—')+td(r.w52||'—')+td(r.ytd)+'<td><span class="top10-btn" onclick="toggleH(this,\''+r.code+'\')">&#9658; TOP 10</span></td></tr>';
+    var sym=r.ticker||r.code,lbl=r.label||sym;
+    var main='<tr data-code="'+r.code+'" data-d1="'+(r.d1_val||0)+'" data-w1="'+(r.w1_val||0)+'" data-m1="'+(r.m1_val||0)+'" data-w52="'+(r.w52_val||0)+'" data-ytd="'+(r.ytd_val||0)+'"><td class="neu">'+(i+1)+'</td><td>'+r.label+'</td><td><span class="tk-link" data-sym="'+sym+'" data-nm="'+lbl+'">'+r.code+'</span></td>'+td(r.d1)+td(r.w1)+td(r.m1||'—')+td(r.w52||'—')+td(r.ytd)+'<td><span class="top10-btn" onclick="toggleH(this,\''+r.code+'\')">&#9658; TOP 10</span></td></tr>';
     return main+mkHRow(r.code,ncols);
   }).join('');
 }
@@ -407,7 +440,7 @@ function renderBreadth(b){
 function renderPulse(data){
   document.getElementById('pulse-container').innerHTML=data.map(function(p){
     var emas=[{l:'10E',v:p.ema10},{l:'21E',v:p.ema21},{l:'50S',v:p.sma50},{l:'200S',v:p.sma200}].map(function(e){return'<span class="ec '+(e.v?'ec-y':'ec-n')+'">'+e.l+' '+(e.v?'&#10003;':'&#10007;')+'</span>';}).join('');
-    return'<div class="pulse-row"><span class="p-ticker">'+p.symbol+'</span><span class="p-price">'+p.price+'</span><div class="p-perfs"><div class="p-cell"><div class="p-lbl">1D</div><div class="p-val '+cls(p.d1)+'">'+p.d1+'</div></div><div class="p-cell"><div class="p-lbl">1W</div><div class="p-val '+cls(p.w1)+'">'+p.w1+'</div></div><div class="p-cell"><div class="p-lbl">1M</div><div class="p-val '+cls(p.m1)+'">'+p.m1+'</div></div><div class="p-cell"><div class="p-lbl">52W</div><div class="p-val '+cls(p.w52)+'">'+p.w52+'</div></div><div class="p-cell"><div class="p-lbl">YTD</div><div class="p-val '+cls(p.ytd)+'">'+p.ytd+'</div></div></div><div class="p-emas">'+emas+'</div></div>';
+    return'<div class="pulse-row"><span class="p-ticker tk-link" data-sym="'+p.symbol+'" data-nm="'+p.symbol+'">'+p.symbol+'</span><span class="p-price">'+p.price+'</span><div class="p-perfs"><div class="p-cell"><div class="p-lbl">1D</div><div class="p-val '+cls(p.d1)+'">'+p.d1+'</div></div><div class="p-cell"><div class="p-lbl">1W</div><div class="p-val '+cls(p.w1)+'">'+p.w1+'</div></div><div class="p-cell"><div class="p-lbl">1M</div><div class="p-val '+cls(p.m1)+'">'+p.m1+'</div></div><div class="p-cell"><div class="p-lbl">52W</div><div class="p-val '+cls(p.w52)+'">'+p.w52+'</div></div><div class="p-cell"><div class="p-lbl">YTD</div><div class="p-val '+cls(p.ytd)+'">'+p.ytd+'</div></div></div><div class="p-emas">'+emas+'</div></div>';
   }).join('');
 }
 
@@ -471,7 +504,7 @@ fetch('data.json?'+Date.now()).then(function(r){return r.json();}).then(function
   if(d.ew_sectors)renderRanked('tb-ew-sectors',d.ew_sectors,9);
   if(d.thematic){var t=[].concat(d.thematic).sort(function(a,b){return(b.w1_val||0)-(a.w1_val||0);}).slice(0,10);renderFull('tb-thematic',t,true,11);}
   if(d.breadth)renderBreadth(d.breadth);
-  if(d.breadth_etfs)document.getElementById('tb-breadth').innerHTML=d.breadth_etfs.map(function(r){return'<tr><td>'+r.code+'</td><td>'+r.label+'</td><td>'+r.price+'</td>'+td(r.d1)+td(r.w1)+td(r.m1||'—')+td(r.ytd)+'</tr>';}).join('');
+  if(d.breadth_etfs)document.getElementById('tb-breadth').innerHTML=d.breadth_etfs.map(function(r){var sym=r.ticker||r.code,lbl=r.label||sym;return'<tr><td><span class="tk-link" data-sym="'+sym+'" data-nm="'+lbl+'">'+r.code+'</span></td><td>'+r.label+'</td><td>'+r.price+'</td>'+td(r.d1)+td(r.w1)+td(r.m1||'—')+td(r.ytd)+'</tr>';}).join('');
   var ts=d.refresh_pht||'—';
   document.getElementById('refresh-ts').textContent='Updated: '+ts;
   document.getElementById('footer-ts').textContent='Last data pull: '+ts;
@@ -494,6 +527,83 @@ fetch('data.json?'+Date.now()).then(function(r){return r.json();}).then(function
   var dot=document.getElementById('data-dot'),stat=document.getElementById('data-status');
   if(dot)dot.style.cssText='width:7px;height:7px;border-radius:50%;background:#f85149;box-shadow:0 0 4px #f85149;flex-shrink:0';
   if(stat){stat.textContent='✗ No data \u2014 run fetch_data.py';stat.style.color='#f85149';}
+});
+
+// ── TRADINGVIEW CHART MODAL ──────────────────────────────────────────────────
+function toTvSym(raw){
+  const MAP={
+    'ES1!':'OANDA:SPX500USD','ES=F':'OANDA:SPX500USD','ES':'OANDA:SPX500USD',
+    'NQ1!':'OANDA:NAS100USD','NQ=F':'OANDA:NAS100USD','NQ':'OANDA:NAS100USD',
+    'RTY1!':'OANDA:US2000USD','RTY=F':'OANDA:US2000USD','RTY':'OANDA:US2000USD',
+    'YM1!':'OANDA:US30USD','YM=F':'OANDA:US30USD','YM':'OANDA:US30USD',
+    'DX-Y.NYB':'CAPITALCOM:DXY','DXY':'CAPITALCOM:DXY',
+    '^VIX':'AMEX:VIXY','VIX':'AMEX:VIXY',
+    'GC1!':'OANDA:XAUUSD','GC=F':'OANDA:XAUUSD','GC':'OANDA:XAUUSD',
+    'SI1!':'OANDA:XAGUSD','SI=F':'OANDA:XAGUSD','SI':'OANDA:XAGUSD',
+    'HG1!':'CAPITALCOM:COPPER','HG=F':'CAPITALCOM:COPPER','HG':'CAPITALCOM:COPPER',
+    'CL1!':'OANDA:WTICOUSD','CL=F':'OANDA:WTICOUSD','WTI':'OANDA:WTICOUSD',
+    'BZ=F':'OANDA:BCOUSD','BRN':'OANDA:BCOUSD',
+    'NG1!':'OANDA:NATGASUSD','NG=F':'OANDA:NATGASUSD','NG':'OANDA:NATGASUSD',
+    '^IRX':'NASDAQ:SHY','13W':'NASDAQ:SHY',
+    '^FVX':'NASDAQ:IEF','5Y':'NASDAQ:IEF',
+    '^TNX':'TVC:US10Y','10Y':'TVC:US10Y',
+    '^TYX':'NASDAQ:TLT','30Y':'NASDAQ:TLT',
+    '^N225':'OANDA:JP225USD','NKY':'OANDA:JP225USD',
+    '^HSI':'FXOPEN:HSI','HSI':'FXOPEN:HSI',
+    '^GDAXI':'OANDA:DE30EUR','DAX':'OANDA:DE30EUR',
+    '^FTSE':'OANDA:UK100GBP','UKX':'OANDA:UK100GBP',
+    '^AXJO':'AMEX:EWA','AS51':'AMEX:EWA',
+    '^KS11':'AMEX:EWY','KOSPI':'AMEX:EWY',
+    'BTC-USD':'CRYPTOCAP:BTC','BTC':'CRYPTOCAP:BTC',
+    'ETH-USD':'CRYPTOCAP:ETH','ETH':'CRYPTOCAP:ETH',
+    'BRK.B':'NYSE:BRK.B'
+  };
+  return MAP[raw]||raw;
+}
+
+function openChart(rawSym, name){
+  const tvSym=toTvSym(rawSym);
+  document.getElementById('tv-modal-title').textContent=(name||rawSym)+'  \u00b7  '+tvSym;
+  const studies=[
+    {"id":"MAExp@tv-basicstudies","inputs":{"length":21}},
+    {"id":"MASimple@tv-basicstudies","inputs":{"length":50}}
+  ];
+  const studiesOverrides={
+    "moving average exponential.plot.color":"#4caf50",
+    "moving average exponential.plot.linewidth":1,
+    "moving average exponential.ma.color":"#4caf50",
+    "moving average exponential.ma.linewidth":1,
+    "moving average.plot.color":"#ff5252",
+    "moving average.plot.linewidth":1,
+    "moving average.ma.color":"#ff5252",
+    "moving average.ma.linewidth":1
+  };
+  const url='https://s.tradingview.com/widgetembed/?frameElementId=tv_frame'
+    +'&symbol='+encodeURIComponent(tvSym)
+    +'&interval=D&hidesidetoolbar=0&symboledit=1&saveimage=0'
+    +'&toolbarbg=131722'
+    +'&studies='+encodeURIComponent(JSON.stringify(studies))
+    +'&studies_overrides='+encodeURIComponent(JSON.stringify(studiesOverrides))
+    +'&theme=dark&style=1&timezone=exchange&withdateranges=1&showpopupbutton=1'
+    +'&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=en';
+  document.getElementById('tv-frame').src=url;
+  document.getElementById('tv-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeChart(){
+  document.getElementById('tv-modal').classList.remove('open');
+  document.getElementById('tv-frame').src='';
+  document.body.style.overflow='';
+}
+
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeChart();});
+document.addEventListener('click',function(e){
+  var t=e.target.closest('.tk-link');
+  if(t){
+    var s=t.getAttribute('data-sym'),n=t.getAttribute('data-nm')||s;
+    if(s)openChart(s,n);
+  }
 });
 </script>
 </body>
