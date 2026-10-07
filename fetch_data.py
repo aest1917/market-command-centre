@@ -46,9 +46,10 @@ def perf(hist):
     ystart = pd.Timestamp(now.year, 1, 1, tz="UTC")
     yh = hist[hist.index >= ystart]
     ytd = pct(p, yh["Close"].iloc[0]) if not yh.empty else None
-    trend = [round(pct(c.iloc[i], c.iloc[i-1]) or 0, 2) for i in range(-5, 0) if len(c) >= abs(i)]
+    trend = [round(pct(c.iloc[i], c.iloc[i-1]) or 0, 2) for i in range(-5, 0) if len(c) > abs(i)]
     return dict(price=fmt_price(p), d1=fmt_pct(d1), w1=fmt_pct(w1), m1=fmt_pct(m1),
-                w52=fmt_pct(w52), ytd=fmt_pct(ytd), d1_val=d1, w1_val=w1, trend=trend)
+                w52=fmt_pct(w52), ytd=fmt_pct(ytd), d1_val=d1, w1_val=w1,
+                m1_val=m1, w52_val=w52, ytd_val=ytd, trend=trend)
 
 def pulse(sym):
     hist = fetch(sym)
@@ -129,13 +130,13 @@ SP_SECTORS    = [("XLE","XLE","Energy"),("XLU","XLU","Utilities"),
                  ("XLC","XLC","Comm. Services"),("XLY","XLY","Cons. Discret."),
                  ("XLK","XLK","Technology")]
 
-# Equal-weight S&P 500 sectors (Invesco RYxx series)
-EW_SECTORS    = [("RYE","RYE","Energy EW"),("RYU","RYU","Utilities EW"),
-                 ("RTM","RTM","Materials EW"),("RHS","RHS","Cons. Staples EW"),
-                 ("RGI","RGI","Industrials EW"),("KBWR","KBWR","Financials EW"),
-                 ("RYH","RYH","Health Care EW"),("EWCO","EWCO","Comm. Services EW"),
-                 ("RCD","RCD","Cons. Discret. EW"),("RYT","RYT","Technology EW"),
-                 ("EWRE","EWRE","Real Estate EW")]
+# Equal-weight S&P 500 sectors (Invesco RSPx series, formerly RYxx)
+EW_SECTORS    = [("RSPE","RSPE","Energy EW"),("RSPU","RSPU","Utilities EW"),
+                 ("RSPM","RSPM","Materials EW"),("RSPS","RSPS","Cons. Staples EW"),
+                 ("RSPN","RSPN","Industrials EW"),("RSPF","RSPF","Financials EW"),
+                 ("RSPH","RSPH","Health Care EW"),("RSPC","RSPC","Comm. Services EW"),
+                 ("RCD","RCD","Cons. Discret. EW"),("RSPT","RSPT","Technology EW"),
+                 ("RSPR","RSPR","Real Estate EW")]
 
 # Your personal thematic watchlist
 THEMATIC      = [("MNRS","MNRS","Gold Miners"),("ARKX","ARKX","ARK Space"),
