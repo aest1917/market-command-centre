@@ -7,16 +7,17 @@ from datetime import datetime, timezone, timedelta
 # ── HELPERS ───────────────────────────────────────────────────────────────────
 
 def pct(cur, past):
-    if past and past != 0:
-        return round((cur - past) / abs(past) * 100, 2)
+    if cur is not None and past is not None and not pd.isna(cur) and not pd.isna(past) and past != 0:
+        val = (cur - past) / abs(past) * 100
+        return round(float(val), 2) if not pd.isna(val) else None
     return None
 
 def fmt_pct(v):
-    if v is None: return "—"
+    if v is None or pd.isna(v): return "—"
     return f"+{v:.2f}%" if v >= 0 else f"{v:.2f}%"
 
 def fmt_price(v):
-    if v is None: return "—"
+    if v is None or pd.isna(v): return "—"
     if v >= 10000: return f"{v:,.0f}"
     if v >= 1000:  return f"{v:,.2f}"
     if v >= 100:   return f"{v:.2f}"
@@ -28,16 +29,22 @@ def sma(s, p): return s.rolling(window=p).mean()
 def fetch(sym, period="1y"):
     try:
         h = yf.Ticker(sym).history(period=period)
-        return None if h.empty or len(h) < 5 else h
+        if h is None or h.empty: return None
+        h = h.dropna(subset=["Close"])
+        return None if len(h) < 5 else h
     except Exception as e:
         print(f"  ERR {sym}: {e}", file=sys.stderr)
         return None
 
 def perf(hist):
     if hist is None or hist.empty:
-        return dict(price="—", d1="—", w1="—", m1="—", w52="—", ytd="—", d1_val=None, w1_val=None, trend=[])
-    c = hist["Close"]
-    p = c.iloc[-1]
+        return dict(price="—", d1="—", w1="—", m1="—", w52="—", ytd="—",
+                    d1_val=None, w1_val=None, m1_val=None, w52_val=None, ytd_val=None, trend=[])
+    c = hist["Close"].dropna()
+    if c.empty:
+        return dict(price="—", d1="—", w1="—", m1="—", w52="—", ytd="—",
+                    d1_val=None, w1_val=None, m1_val=None, w52_val=None, ytd_val=None, trend=[])
+    p = float(c.iloc[-1])
     d1  = pct(p, c.iloc[-2])  if len(c) >= 2  else None
     w1  = pct(p, c.iloc[-6])  if len(c) >= 6  else None
     m1  = pct(p, c.iloc[-22]) if len(c) >= 22 else None
@@ -45,7 +52,8 @@ def perf(hist):
     now = pd.Timestamp.now(tz="UTC")
     ystart = pd.Timestamp(now.year, 1, 1, tz="UTC")
     yh = hist[hist.index >= ystart]
-    ytd = pct(p, yh["Close"].iloc[0]) if not yh.empty else None
+    yh_c = yh["Close"].dropna() if not yh.empty else pd.Series(dtype=float)
+    ytd = pct(p, yh_c.iloc[0]) if not yh_c.empty else None
     trend = [round(pct(c.iloc[i], c.iloc[i-1]) or 0, 2) for i in range(-5, 0) if len(c) > abs(i)]
     return dict(price=fmt_price(p), d1=fmt_pct(d1), w1=fmt_pct(w1), m1=fmt_pct(m1),
                 w52=fmt_pct(w52), ytd=fmt_pct(ytd), d1_val=d1, w1_val=w1,
@@ -55,15 +63,22 @@ def pulse(sym):
     hist = fetch(sym)
     if hist is None:
         return dict(symbol=sym, price="—", d1="—", w1="—", m1="—", w52="—", ytd="—",
+                    d1_val=None, w1_val=None, m1_val=None, w52_val=None, ytd_val=None, trend=[],
                     ema10=False, ema21=False, sma50=False, sma200=False)
     p = perf(hist)
-    c = hist["Close"]
-    pv = c.iloc[-1]
+    c = hist["Close"].dropna()
+    if c.empty:
+        return dict(symbol=sym, **p, ema10=False, ema21=False, sma50=False, sma200=False)
+    pv = float(c.iloc[-1])
+    e10 = ema(c, 10).dropna()
+    e21 = ema(c, 21).dropna()
+    s50 = sma(c, 50).dropna()
+    s200 = sma(c, 200).dropna()
     return dict(symbol=sym, **p,
-                ema10 =pv > ema(c,10).iloc[-1],
-                ema21 =pv > ema(c,21).iloc[-1],
-                sma50 =pv > sma(c,50).iloc[-1],
-                sma200=pv > sma(c,200).iloc[-1] if len(c)>=200 else False)
+                ema10 =bool(pv > e10.iloc[-1]) if not e10.empty else False,
+                ema21 =bool(pv > e21.iloc[-1]) if not e21.empty else False,
+                sma50 =bool(pv > s50.iloc[-1]) if not s50.empty else False,
+                sma200=bool(pv > s200.iloc[-1]) if len(c)>=200 and not s200.empty else False)
 
 def grp(tickers):
     out = []
@@ -164,11 +179,15 @@ def calc_breadth(sp_sector_hists):
     above_20, above_50, above_200 = [], [], []
     for h in sp_sector_hists:
         if h is None or h.empty: continue
-        c = h["Close"]
-        pv = c.iloc[-1]
-        if len(c) >= 20:  above_20.append(1  if pv > sma(c,20).iloc[-1]  else 0)
-        if len(c) >= 50:  above_50.append(1  if pv > sma(c,50).iloc[-1]  else 0)
-        if len(c) >= 200: above_200.append(1 if pv > sma(c,200).iloc[-1] else 0)
+        c = h["Close"].dropna()
+        if c.empty: continue
+        pv = float(c.iloc[-1])
+        s20 = sma(c,20).dropna()
+        s50 = sma(c,50).dropna()
+        s200 = sma(c,200).dropna()
+        if len(c) >= 20 and not s20.empty:  above_20.append(1  if pv > s20.iloc[-1]  else 0)
+        if len(c) >= 50 and not s50.empty:  above_50.append(1  if pv > s50.iloc[-1]  else 0)
+        if len(c) >= 200 and not s200.empty: above_200.append(1 if pv > s200.iloc[-1] else 0)
     def pct_str(lst): return str(round(sum(lst)/len(lst)*100)) if lst else None
     return dict(pct_above_20ma=pct_str(above_20),
                 pct_above_50ma=pct_str(above_50),
@@ -220,17 +239,29 @@ data = dict(
     thematic=thematic, breadth=breadth, breadth_etfs=breadth_etfs
 )
 
-class SafeEncoder(json.JSONEncoder):
-    def default(self, obj):
-        import numpy as np
-        if isinstance(obj, (np.bool_)): return bool(obj)
-        if isinstance(obj, (np.integer)): return int(obj)
-        if isinstance(obj, (np.floating)): return float(obj)
-        if isinstance(obj, (np.ndarray,)): return obj.tolist()
-        return super().default(obj)
+def sanitize_for_json(obj):
+    import math
+    if obj is None:
+        return None
+    if isinstance(obj, float):
+        return None if (math.isnan(obj) or math.isinf(obj)) else obj
+    if isinstance(obj, (np.floating,)):
+        f = float(obj)
+        return None if (math.isnan(f) or math.isinf(f)) else f
+    if isinstance(obj, (np.integer,)):
+        return int(obj)
+    if isinstance(obj, (np.bool_, bool)):
+        return bool(obj)
+    if isinstance(obj, dict):
+        return {k: sanitize_for_json(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [sanitize_for_json(v) for v in obj]
+    return obj
 
-with open("data.json","w") as f:
-    json.dump(data, f, indent=2, cls=SafeEncoder)
+clean_data = sanitize_for_json(data)
+
+with open("data.json", "w") as f:
+    json.dump(clean_data, f, indent=2, allow_nan=False)
 
 print(f"Done — {refresh_pht}", file=sys.stderr)
 print("OK")
