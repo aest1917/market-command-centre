@@ -26,10 +26,40 @@ def fmt_price(v):
 def ema(s, p): return s.ewm(span=p, adjust=False).mean()
 def sma(s, p): return s.rolling(window=p).mean()
 
+def fill_last_close(sym, t, h):
+    """Yahoo sometimes returns the latest daily bar with a blank Close for a few
+    hours after the session ends. Fill it from the regular-market quote that comes
+    back with the same request, but only if that quote is from the same session."""
+    if not pd.isna(h["Close"].iloc[-1]):
+        return h
+    try:
+        md = t.history_metadata or {}
+        price, qtime = md.get("regularMarketPrice"), md.get("regularMarketTime")
+        if price is None or qtime is None or pd.isna(price):
+            return h
+        if isinstance(qtime, (int, float)):
+            qtime = pd.Timestamp(qtime, unit="s", tz="UTC")
+        qtime = pd.Timestamp(qtime)
+        if qtime.tzinfo is None:
+            qtime = qtime.tz_localize("UTC")
+        last_idx = h.index[-1]
+        if h.index.tz is not None:
+            qtime = qtime.tz_convert(h.index.tz)
+        if qtime.date() != last_idx.date():
+            return h
+        h = h.copy()
+        h.loc[last_idx, "Close"] = float(price)
+        print(f"  {sym}: filled blank {last_idx.date()} close with quote {price}", file=sys.stderr)
+    except Exception as e:
+        print(f"  WARN {sym}: could not fill blank close: {e}", file=sys.stderr)
+    return h
+
 def fetch(sym, period="1y"):
     try:
-        h = yf.Ticker(sym).history(period=period)
+        t = yf.Ticker(sym)
+        h = t.history(period=period)
         if h is None or h.empty: return None
+        h = fill_last_close(sym, t, h)
         h = h.dropna(subset=["Close"])
         return None if len(h) < 5 else h
     except Exception as e:
