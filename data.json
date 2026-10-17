@@ -1,60 +1,6 @@
 {
-<<<<<<< Updated upstream
-  "refresh_utc": "17 Oct 2026 00:07 UTC",
-  "refresh_pht": "17 Oct 2026 08:07 PHT",
-  "pulse": [
-    {
-      "symbol": "SPY",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.06,
-        -0.01,
-        -1.08,
-        0.28,
-        NaN
-      ],
-      "ema10": false,
-      "ema21": false,
-      "sma50": false,
-      "sma200": false
-    },
-    {
-      "symbol": "QQQ",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.7,
-        -0.33,
-        -1.97,
-        -0.13,
-        NaN
-      ],
-      "ema10": false,
-      "ema21": false,
-      "sma50": false,
-      "sma200": false
-=======
-  "refresh_utc": "17 Oct 2026 01:07 UTC",
-  "refresh_pht": "17 Oct 2026 09:07 PHT",
+  "refresh_utc": "17 Oct 2026 01:26 UTC",
+  "refresh_pht": "17 Oct 2026 09:26 PHT",
   "pulse": [
     {
       "symbol": "SPY",
@@ -105,7 +51,6 @@
       "ema21": false,
       "sma50": true,
       "sma200": true
->>>>>>> Stashed changes
     }
   ],
   "futures": [
@@ -255,82 +200,46 @@
       "ticker": "BTC-USD",
       "code": "BTC",
       "label": "Bitcoin",
-<<<<<<< Updated upstream
-      "price": "81,491",
-      "d1": "-0.79%",
-      "w1": "-2.62%",
-      "m1": "-3.03%",
-      "w52": "-23.46%",
-      "ytd": "-8.16%",
-      "d1_val": -0.79,
-      "w1_val": -2.62,
-      "m1_val": -3.03,
-      "w52_val": -23.46,
-      "ytd_val": -8.16,
-=======
-      "price": "81,449",
-      "d1": "-0.84%",
-      "w1": "-2.67%",
-      "m1": "-3.08%",
-      "w52": "-23.50%",
-      "ytd": "-8.21%",
-      "d1_val": -0.84,
-      "w1_val": -2.67,
-      "m1_val": -3.08,
-      "w52_val": -23.5,
-      "ytd_val": -8.21,
->>>>>>> Stashed changes
+      "price": "81,462",
+      "d1": "-0.83%",
+      "w1": "-2.65%",
+      "m1": "-3.06%",
+      "w52": "-23.49%",
+      "ytd": "-8.19%",
+      "d1_val": -0.83,
+      "w1_val": -2.65,
+      "m1_val": -3.06,
+      "w52_val": -23.49,
+      "ytd_val": -8.19,
       "trend": [
         -2.29,
         1.63,
         -1.84,
         0.71,
-<<<<<<< Updated upstream
-        -0.79
-=======
-        -0.84
->>>>>>> Stashed changes
+        -0.83
       ]
     },
     {
       "ticker": "ETH-USD",
       "code": "ETH",
       "label": "Ethereum",
-<<<<<<< Updated upstream
-      "price": "2,419.13",
-      "d1": "-0.87%",
-      "w1": "-4.56%",
-      "m1": "-10.09%",
-      "w52": "-36.88%",
-      "ytd": "-19.37%",
-      "d1_val": -0.87,
-      "w1_val": -4.56,
-      "m1_val": -10.09,
-      "w52_val": -36.88,
-      "ytd_val": -19.37,
-=======
-      "price": "2,418.90",
+      "price": "2,418.99",
       "d1": "-0.88%",
       "w1": "-4.57%",
       "m1": "-10.09%",
-      "w52": "-36.89%",
+      "w52": "-36.88%",
       "ytd": "-19.38%",
       "d1_val": -0.88,
       "w1_val": -4.57,
       "m1_val": -10.09,
-      "w52_val": -36.89,
+      "w52_val": -36.88,
       "ytd_val": -19.38,
->>>>>>> Stashed changes
       "trend": [
         -3.56,
         2.14,
         -3.14,
         0.92,
-<<<<<<< Updated upstream
-        -0.87
-=======
         -0.88
->>>>>>> Stashed changes
       ]
     }
   ],
@@ -690,25 +599,6 @@
       "ticker": "^KS11",
       "code": "KOSPI",
       "label": "South Korea",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -3.65,
-        -5.46,
-        -0.44,
-        -7.57,
-        NaN
-=======
       "price": "5,554.22",
       "d1": "-7.57%",
       "w1": "-18.37%",
@@ -726,7 +616,6 @@
         -5.46,
         -0.44,
         -7.57
->>>>>>> Stashed changes
       ]
     }
   ],
@@ -735,25 +624,6 @@
       "ticker": "SPY",
       "code": "SPY",
       "label": "S&P 500",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.06,
-        -0.01,
-        -1.08,
-        0.28,
-        NaN
-=======
       "price": "771.79",
       "d1": "+0.28%",
       "w1": "-0.28%",
@@ -771,32 +641,12 @@
         -0.01,
         -1.08,
         0.28
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "QQQ",
       "code": "QQQ",
       "label": "Nasdaq 100",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.7,
-        -0.33,
-        -1.97,
-        -0.13,
-        NaN
-=======
       "price": "728.00",
       "d1": "-0.13%",
       "w1": "-2.62%",
@@ -814,32 +664,12 @@
         -0.33,
         -1.97,
         -0.13
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "IWM",
       "code": "IWM",
       "label": "Russell 2000",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.37,
-        -0.43,
-        -1.93,
-        1.37,
-        NaN
-=======
       "price": "275.08",
       "d1": "+1.37%",
       "w1": "-0.90%",
@@ -857,32 +687,12 @@
         -0.43,
         -1.93,
         1.37
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "DIA",
       "code": "DIA",
       "label": "Dow Jones",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.35,
-        -0.33,
-        -0.11,
-        1.08,
-        NaN
-=======
       "price": "521.18",
       "d1": "+1.08%",
       "w1": "+1.86%",
@@ -900,32 +710,12 @@
         -0.33,
         -0.11,
         1.08
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "RSP",
       "code": "RSP",
       "label": "S&P 500 Equal Weight",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.07,
-        0.05,
-        -0.57,
-        1.37,
-        NaN
-=======
       "price": "215.00",
       "d1": "+1.37%",
       "w1": "+1.48%",
@@ -943,32 +733,12 @@
         0.05,
         -0.57,
         1.37
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "MDY",
       "code": "MDY",
       "label": "S&P 400 Mid-Cap",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.38,
-        0.12,
-        -1.29,
-        1.0,
-        NaN
-=======
       "price": "666.11",
       "d1": "+1.00%",
       "w1": "-0.02%",
@@ -986,32 +756,12 @@
         0.12,
         -1.29,
         1.0
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "IJR",
       "code": "IJR",
       "label": "S&P 600 Small-Cap",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.06,
-        0.09,
-        -1.59,
-        1.31,
-        NaN
-=======
       "price": "137.19",
       "d1": "+1.31%",
       "w1": "-0.09%",
@@ -1029,32 +779,12 @@
         0.09,
         -1.59,
         1.31
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "VTI",
       "code": "VTI",
       "label": "Total US Market",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.1,
-        -0.07,
-        -1.16,
-        0.41,
-        NaN
-=======
       "price": "378.42",
       "d1": "+0.41%",
       "w1": "-0.30%",
@@ -1072,32 +802,12 @@
         -0.07,
         -1.16,
         0.41
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "EFA",
       "code": "EFA",
       "label": "Intl Developed",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.34,
-        0.41,
-        -0.7,
-        0.9,
-        NaN
-=======
       "price": "103.67",
       "d1": "+0.90%",
       "w1": "+0.94%",
@@ -1115,32 +825,12 @@
         0.41,
         -0.7,
         0.9
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "EEM",
       "code": "EEM",
       "label": "Emerging Markets",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.97,
-        -0.62,
-        -2.05,
-        -0.67,
-        NaN
-=======
       "price": "63.96",
       "d1": "-0.67%",
       "w1": "-3.24%",
@@ -1158,32 +848,12 @@
         -0.62,
         -2.05,
         -0.67
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "HYG",
       "code": "HYG",
       "label": "High Yield Bonds",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.08,
-        -0.26,
-        -0.36,
-        0.42,
-        NaN
-=======
       "price": "77.13",
       "d1": "+0.42%",
       "w1": "-0.01%",
@@ -1201,32 +871,12 @@
         -0.26,
         -0.36,
         0.42
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "TLT",
       "code": "TLT",
       "label": "20Y+ Treasury",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.09,
-        0.41,
-        0.66,
-        1.37,
-        NaN
-=======
       "price": "79.97",
       "d1": "+1.37%",
       "w1": "+2.70%",
@@ -1244,32 +894,12 @@
         0.41,
         0.66,
         1.37
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "GLD",
       "code": "GLD",
       "label": "Gold",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.63,
-        -0.13,
-        -1.49,
-        1.79,
-        NaN
-=======
       "price": "382.71",
       "d1": "+1.79%",
       "w1": "+1.08%",
@@ -1287,32 +917,12 @@
         -0.13,
         -1.49,
         1.79
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "USO",
       "code": "USO",
       "label": "Oil",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        1.91,
-        1.36,
-        0.31,
-        2.44,
-        NaN
-=======
       "price": "157.31",
       "d1": "+2.44%",
       "w1": "+6.59%",
@@ -1330,80 +940,11 @@
         1.36,
         0.31,
         2.44
->>>>>>> Stashed changes
       ]
     }
   ],
   "submarket": [
     {
-<<<<<<< Updated upstream
-      "ticker": "XLK",
-      "code": "XLK",
-      "label": "Technology",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -1.22,
-        -0.04,
-        -2.98,
-        -0.65,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLF",
-      "code": "XLF",
-      "label": "Financials",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.58,
-        -0.42,
-        -0.55,
-        1.38,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLV",
-      "code": "XLV",
-      "label": "Health Care",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.69,
-        -1.35,
-        2.53,
-        1.86,
-        NaN
-=======
       "ticker": "XLV",
       "code": "XLV",
       "label": "Health Care",
@@ -1493,55 +1034,12 @@
         0.57,
         -0.1,
         1.79
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "XLE",
       "code": "XLE",
       "label": "Energy",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        1.43,
-        1.8,
-        0.64,
-        -1.58,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLI",
-      "code": "XLI",
-      "label": "Industrials",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.06,
-        -0.28,
-        -0.97,
-        0.51,
-        NaN
-=======
       "price": "66.56",
       "d1": "-1.58%",
       "w1": "+2.02%",
@@ -1582,55 +1080,12 @@
         -0.42,
         -0.55,
         1.38
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "XLY",
       "code": "XLY",
       "label": "Cons. Discretionary",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.51,
-        0.08,
-        -0.77,
-        1.71,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLP",
-      "code": "XLP",
-      "label": "Cons. Staples",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        1.17,
-        -0.26,
-        2.22,
-        0.72,
-        NaN
-=======
       "price": "113.41",
       "d1": "+1.71%",
       "w1": "+1.52%",
@@ -1694,32 +1149,12 @@
         0.39,
         -0.84,
         1.55
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "XLU",
       "code": "XLU",
       "label": "Utilities",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.53,
-        0.58,
-        -0.36,
-        -0.17,
-        NaN
-=======
       "price": "41.65",
       "d1": "-0.17%",
       "w1": "+1.41%",
@@ -1946,333 +1381,12 @@
         -0.21,
         -0.81,
         1.21
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "XLB",
       "code": "XLB",
       "label": "Materials",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.02,
-        0.57,
-        -0.1,
-        1.79,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLRE",
-      "code": "XLRE",
-      "label": "Real Estate",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.75,
-        -0.21,
-        -0.81,
-        1.21,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLC",
-      "code": "XLC",
-      "label": "Comm. Services",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.97,
-        0.74,
-        -1.3,
-        1.46,
-        NaN
-      ]
-    },
-    {
-      "ticker": "IVW",
-      "code": "IVW",
-      "label": "S&P 500 Growth",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.43,
-        -0.04,
-        -1.9,
-        -0.11,
-        NaN
-      ]
-    },
-    {
-      "ticker": "IVE",
-      "code": "IVE",
-      "label": "S&P 500 Value",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.38,
-        0.07,
-        0,
-        0.68,
-        NaN
-      ]
-    },
-    {
-      "ticker": "IJH",
-      "code": "IJH",
-      "label": "S&P 400 Mid-Cap",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.37,
-        0.14,
-        -1.35,
-        1.05,
-        NaN
-      ]
-    },
-    {
-      "ticker": "VBR",
-      "code": "VBR",
-      "label": "Small-Cap Value",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.12,
-        0.39,
-        -0.84,
-        1.55,
-        NaN
-      ]
-    },
-    {
-      "ticker": "VUG",
-      "code": "VUG",
-      "label": "Large-Cap Growth",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.36,
-        0.12,
-        -2.05,
-        -0.1,
-        NaN
-      ]
-    }
-  ],
-  "sp_sectors": [
-    {
-      "ticker": "XLE",
-      "code": "XLE",
-      "label": "Energy",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        1.43,
-        1.8,
-        0.64,
-        -1.58,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLU",
-      "code": "XLU",
-      "label": "Utilities",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.53,
-        0.58,
-        -0.36,
-        -0.17,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLB",
-      "code": "XLB",
-      "label": "Materials",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.02,
-        0.57,
-        -0.1,
-        1.79,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLP",
-      "code": "XLP",
-      "label": "Cons. Staples",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        1.17,
-        -0.26,
-        2.22,
-        0.72,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLI",
-      "code": "XLI",
-      "label": "Industrials",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.06,
-        -0.28,
-        -0.97,
-        0.51,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLRE",
-      "code": "XLRE",
-      "label": "Real Estate",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.75,
-        -0.21,
-        -0.81,
-        1.21,
-        NaN
-=======
       "price": "50.56",
       "d1": "+1.79%",
       "w1": "+2.62%",
@@ -2313,78 +1427,12 @@
         1.8,
         0.64,
         -1.58
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "XLF",
       "code": "XLF",
       "label": "Financials",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.58,
-        -0.42,
-        -0.55,
-        1.38,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLV",
-      "code": "XLV",
-      "label": "Health Care",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.69,
-        -1.35,
-        2.53,
-        1.86,
-        NaN
-      ]
-    },
-    {
-      "ticker": "XLC",
-      "code": "XLC",
-      "label": "Comm. Services",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.97,
-        0.74,
-        -1.3,
-        1.46,
-        NaN
-=======
       "price": "55.27",
       "d1": "+1.38%",
       "w1": "+1.92%",
@@ -2402,32 +1450,12 @@
         -0.42,
         -0.55,
         1.38
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "XLY",
       "code": "XLY",
       "label": "Cons. Discret.",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.51,
-        0.08,
-        -0.77,
-        1.71,
-        NaN
-=======
       "price": "113.41",
       "d1": "+1.71%",
       "w1": "+1.52%",
@@ -2514,32 +1542,12 @@
         -0.28,
         -0.97,
         0.51
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "XLK",
       "code": "XLK",
       "label": "Technology",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -1.22,
-        -0.04,
-        -2.98,
-        -0.65,
-        NaN
-=======
       "price": "189.19",
       "d1": "-0.65%",
       "w1": "-4.34%",
@@ -2557,57 +1565,11 @@
         -0.04,
         -2.98,
         -0.65
->>>>>>> Stashed changes
       ]
     }
   ],
   "ew_sectors": [
     {
-<<<<<<< Updated upstream
-      "ticker": "RSPE",
-      "code": "RSPE",
-      "label": "Energy EW",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.13,
-        0.03,
-        -0.56,
-        1.69,
-        NaN
-      ]
-    },
-    {
-      "ticker": "RSPU",
-      "code": "RSPU",
-      "label": "Utilities EW",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.48,
-        0.65,
-        -0.2,
-        -0.2,
-        NaN
-=======
       "ticker": "RSPH",
       "code": "RSPH",
       "label": "Health Care EW",
@@ -2651,78 +1613,12 @@
         0,
         1.92,
         1.19
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "RSPM",
       "code": "RSPM",
       "label": "Materials EW",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.08,
-        0.78,
-        0.19,
-        2.01,
-        NaN
-      ]
-    },
-    {
-      "ticker": "RSPS",
-      "code": "RSPS",
-      "label": "Cons. Staples EW",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        1.09,
-        0,
-        1.92,
-        1.19,
-        NaN
-      ]
-    },
-    {
-      "ticker": "RSPN",
-      "code": "RSPN",
-      "label": "Industrials EW",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.08,
-        -0.02,
-        -0.66,
-        1.18,
-        NaN
-=======
       "price": "38.49",
       "d1": "+2.01%",
       "w1": "+2.91%",
@@ -2786,55 +1682,12 @@
         0.03,
         -0.56,
         1.69
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "RSPF",
       "code": "RSPF",
       "label": "Financials EW",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.49,
-        -0.39,
-        -0.81,
-        1.98,
-        NaN
-      ]
-    },
-    {
-      "ticker": "RSPH",
-      "code": "RSPH",
-      "label": "Health Care EW",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.82,
-        -0.37,
-        1.35,
-        2.22,
-        NaN
-=======
       "price": "79.92",
       "d1": "+1.98%",
       "w1": "+1.56%",
@@ -2898,32 +1751,12 @@
         -0.02,
         -0.66,
         1.18
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "RSPC",
       "code": "RSPC",
       "label": "Comm. Services EW",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.17,
-        0.34,
-        -0.51,
-        2.19,
-        NaN
-=======
       "price": "35.54",
       "d1": "+2.19%",
       "w1": "+0.23%",
@@ -2941,7 +1774,6 @@
         0.34,
         -0.51,
         2.19
->>>>>>> Stashed changes
       ]
     },
     {
@@ -2971,48 +1803,6 @@
       "ticker": "RSPT",
       "code": "RSPT",
       "label": "Technology EW",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -1.54,
-        -0.12,
-        -3.36,
-        0.06,
-        NaN
-      ]
-    },
-    {
-      "ticker": "RSPR",
-      "code": "RSPR",
-      "label": "Real Estate EW",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.1,
-        0,
-        -1.04,
-        1.72,
-        NaN
-=======
       "price": "65.27",
       "d1": "+0.06%",
       "w1": "-3.90%",
@@ -3030,14 +1820,11 @@
         -0.12,
         -3.36,
         0.06
->>>>>>> Stashed changes
       ]
     }
   ],
   "thematic": [
     {
-<<<<<<< Updated upstream
-=======
       "ticker": "IGV",
       "code": "IGV",
       "label": "Software",
@@ -3314,7 +2101,6 @@
       ]
     },
     {
->>>>>>> Stashed changes
       "ticker": "MNRS",
       "code": "MNRS",
       "label": "Gold Miners",
@@ -3335,294 +2121,12 @@
         0.17,
         -2.93
       ]
-    },
-    {
-      "ticker": "ARKX",
-      "code": "ARKX",
-      "label": "ARK Space",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -1.37,
-        -1.01,
-        -2.91,
-        0.02,
-        NaN
-      ]
-    },
-    {
-      "ticker": "UFO",
-      "code": "UFO",
-      "label": "Space ETF",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -1.12,
-        -1.85,
-        -2.48,
-        0.7,
-        NaN
-      ]
-    },
-    {
-      "ticker": "QTUM",
-      "code": "QTUM",
-      "label": "Quantum",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -2.35,
-        -0.59,
-        -3.92,
-        0.08,
-        NaN
-      ]
-    },
-    {
-      "ticker": "TAN",
-      "code": "TAN",
-      "label": "Solar",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.62,
-        2.07,
-        -3.92,
-        0.26,
-        NaN
-      ]
-    },
-    {
-      "ticker": "ICLN",
-      "code": "ICLN",
-      "label": "Clean Energy",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.93,
-        0.35,
-        -3.14,
-        -0.54,
-        NaN
-      ]
-    },
-    {
-      "ticker": "HACK",
-      "code": "HACK",
-      "label": "Cybersecurity",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -2.69,
-        -0.12,
-        -3.71,
-        -0.11,
-        NaN
-      ]
-    },
-    {
-      "ticker": "ARKQ",
-      "code": "ARKQ",
-      "label": "ARK Robotics",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -1.55,
-        -1.23,
-        -3.56,
-        -0.14,
-        NaN
-      ]
-    },
-    {
-      "ticker": "IGV",
-      "code": "IGV",
-      "label": "Software",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -1.23,
-        -0.27,
-        -3.0,
-        1.81,
-        NaN
-      ]
-    },
-    {
-      "ticker": "BOTZ",
-      "code": "BOTZ",
-      "label": "Robotics/AI",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -1.63,
-        0.17,
-        -2.43,
-        -1.08,
-        NaN
-      ]
-    },
-    {
-      "ticker": "ARKK",
-      "code": "ARKK",
-      "label": "ARK Innovation",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -1.79,
-        -0.97,
-        -3.09,
-        1.43,
-        NaN
-      ]
-    },
-    {
-      "ticker": "SOXX",
-      "code": "SOXX",
-      "label": "Semis iShares",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -2.6,
-        -0.17,
-        -4.5,
-        -0.91,
-        NaN
-      ]
-    },
-    {
-      "ticker": "SMH",
-      "code": "SMH",
-      "label": "Semis",
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -2.05,
-        -0.49,
-        -3.98,
-        -1.04,
-        NaN
-      ]
     }
   ],
   "breadth": {
-<<<<<<< Updated upstream
-    "pct_above_20ma": "0",
-    "pct_above_50ma": "0",
-    "pct_above_200ma": "0",
-=======
     "pct_above_20ma": "82",
     "pct_above_50ma": "36",
     "pct_above_200ma": "55",
->>>>>>> Stashed changes
     "new_highs": "\u2014",
     "new_lows": "\u2014",
     "vix_price": "19.99"
@@ -3632,25 +2136,6 @@
       "ticker": "RSP",
       "code": "RSP",
       "label": "Equal Weight S&P vs SPY breadth",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.07,
-        0.05,
-        -0.57,
-        1.37,
-        NaN
-=======
       "price": "215.00",
       "d1": "+1.37%",
       "w1": "+1.48%",
@@ -3668,32 +2153,12 @@
         0.05,
         -0.57,
         1.37
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "QQEW",
       "code": "QQEW",
       "label": "Equal Weight Nasdaq",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -1.1,
-        -0.47,
-        -2.22,
-        1.19,
-        NaN
-=======
       "price": "159.59",
       "d1": "+1.19%",
       "w1": "-2.01%",
@@ -3711,32 +2176,12 @@
         -0.47,
         -2.22,
         1.19
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "IWO",
       "code": "IWO",
       "label": "Russell 2000 Growth",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -0.86,
-        -0.74,
-        -2.36,
-        1.41,
-        NaN
-=======
       "price": "347.65",
       "d1": "+1.41%",
       "w1": "-1.65%",
@@ -3754,32 +2199,12 @@
         -0.74,
         -2.36,
         1.41
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "IWN",
       "code": "IWN",
       "label": "Russell 2000 Value",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.1,
-        -0.05,
-        -1.55,
-        1.36,
-        NaN
-=======
       "price": "210.54",
       "d1": "+1.36%",
       "w1": "-0.19%",
@@ -3797,32 +2222,12 @@
         -0.05,
         -1.55,
         1.36
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "SPHB",
       "code": "SPHB",
       "label": "S&P 500 High Beta",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        -2.15,
-        -0.39,
-        -4.06,
-        0.14,
-        NaN
-=======
       "price": "144.36",
       "d1": "+0.14%",
       "w1": "-5.04%",
@@ -3840,32 +2245,12 @@
         -0.39,
         -4.06,
         0.14
->>>>>>> Stashed changes
       ]
     },
     {
       "ticker": "SPLV",
       "code": "SPLV",
       "label": "S&P 500 Low Volatility",
-<<<<<<< Updated upstream
-      "price": "nan",
-      "d1": "nan%",
-      "w1": "nan%",
-      "m1": "nan%",
-      "w52": "nan%",
-      "ytd": "nan%",
-      "d1_val": NaN,
-      "w1_val": NaN,
-      "m1_val": NaN,
-      "w52_val": NaN,
-      "ytd_val": NaN,
-      "trend": [
-        0.9,
-        0.26,
-        0.42,
-        0.57,
-        NaN
-=======
       "price": "73.71",
       "d1": "+0.57%",
       "w1": "+2.42%",
@@ -3883,7 +2268,6 @@
         0.26,
         0.42,
         0.57
->>>>>>> Stashed changes
       ]
     }
   ]
