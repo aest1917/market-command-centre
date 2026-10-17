@@ -489,7 +489,13 @@ function renderPulse(data){
 })();
 
 // ── LOAD DATA ────────────────────────────────────────────────────────────────
-fetch('data.json?'+Date.now()).then(function(r){return r.json();}).then(function(d){
+fetch('data.json?'+Date.now()).then(function(r){
+  if(!r.ok) throw new Error('HTTP ' + r.status + ' ' + r.statusText);
+  return r.text();
+}).then(function(txt){
+  var clean = txt.replace(/:\s*NaN\b/g, ': null').replace(/:\s*Infinity\b/g, ': null').replace(/:\s*-Infinity\b/g, ': null');
+  return JSON.parse(clean);
+}).then(function(d){
   renderPulse(d.pulse);
   renderMacro('tb-futures',d.futures||[]);
   renderMacro('tb-vix',d.vix_dxy||[]);
@@ -522,11 +528,16 @@ fetch('data.json?'+Date.now()).then(function(r){return r.json();}).then(function
       meta.textContent=ago+' \u00b7 Refreshes daily at 06:00 PHT';
     }catch(e){meta.textContent='Refreshes daily at 06:00 PHT';}
   }
-}).catch(function(){
-  document.getElementById('refresh-ts').textContent='data.json not found';
+}).catch(function(err){
+  console.error('Failed to load data.json:', err);
+  var isFile=location.protocol==='file:';
+  document.getElementById('refresh-ts').textContent=isFile?'file:// CORS blocked':'data.json error';
   var dot=document.getElementById('data-dot'),stat=document.getElementById('data-status');
   if(dot)dot.style.cssText='width:7px;height:7px;border-radius:50%;background:#f85149;box-shadow:0 0 4px #f85149;flex-shrink:0';
-  if(stat){stat.textContent='✗ No data \u2014 run fetch_data.py';stat.style.color='#f85149';}
+  if(stat){
+    stat.textContent=isFile?'✗ Running via file:// \u2014 view via localhost or GitHub Pages':'✗ No data \u2014 run fetch_data.py';
+    stat.style.color='#f85149';
+  }
 });
 
 // ── TRADINGVIEW CHART MODAL ──────────────────────────────────────────────────
